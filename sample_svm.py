@@ -8,7 +8,6 @@ We are using numpy for data processing
 
 We are using scikit learn to learn the alogirithm.
 
-We set iris and digits as variables to load in our data to train.
 """
 
 """
@@ -24,17 +23,18 @@ clf = svm.SVC(gamma=0.001, C=100)
 x = [[1, 1, 1], [2,2,2], [3, 3, 3],
      [4,4,4], [5,5,5], [6,6,6]]
 
-y = [["one"], ["two"], ["three"],
-     ["four"], ["five"], ["six"]]
+y = [["cat"], ["dog"], ["bird"],
+     ["squirrel"], ["dinosaur"], ["pig"]]
 
 clf.fit(x,y)
 
 """ Here we are using our classifier to fit the data using the standard clf.fit(x, y) where x is the data and y is the labels
 """
 
-random_sample = [5, 5, 5]
+x_test = [5, 5, 5]
+y_test = ["dinosaur"]
 
-model_prediction = clf.predict([random_sample])
+model_prediction = clf.predict([x_test])
 
 """Here we are setting a variable called model_prediction equal to what our algorithm predicted. This can be done by calling .predict and passing the algorithm some value
 """
